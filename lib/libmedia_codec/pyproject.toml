@@ -29,4 +29,4 @@ Repository = "https://github.com/jeguzzi/RoboMaster-SDK.git"
 minimum-version = "build-system.requires"
 install.components = ["libmedia_codec"]
 wheel.exclude = ["__pycache__"]
-cmake.args = ["--preset default"]
+cmake.args = ["--preset linux-dev"]
