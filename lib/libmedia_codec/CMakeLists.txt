@@ -11,7 +11,7 @@ pkg_check_modules(AVCODEC    REQUIRED    IMPORTED_TARGET libavcodec)
 pkg_check_modules(AVUTIL     REQUIRED    IMPORTED_TARGET libavutil)
 pkg_check_modules(SWSCALE    REQUIRED    IMPORTED_TARGET libswscale)
 
-find_package(Opus CONFIG REQUIRED)
+pkg_check_modules(OPUS REQUIRED IMPORTED_TARGET opus)
 
 set(Python3_FIND_STRATEGY LOCATION)
 find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
@@ -36,7 +36,7 @@ target_link_libraries(libmedia_codec PRIVATE
 	PkgConfig::AVCODEC
 	PkgConfig::AVUTIL
 	PkgConfig::SWSCALE
-	Opus::opus
+	PkgConfig::OPUS
 )
 
 if(CMAKE_COMPILER_IS_GNUCXX)
